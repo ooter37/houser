@@ -1,7 +1,7 @@
 import React from "react";
 import axios from 'axios'
 import {Link} from 'react-router-dom'
-import store, {STEP_THREE, CLEAR} from '../../../store'
+import store, {STEP_THREE} from '../../../store'
 
 
 export default class StepThree extends React.Component {
@@ -16,26 +16,13 @@ export default class StepThree extends React.Component {
     this.nextStep = this.nextStep.bind(this)
   }
   addHouse() {
-    const reduxState = store.getState()
-    console.log(`name ${reduxState.name}`)
-    console.log(`address ${reduxState.address}`)
-    console.log(`city ${reduxState.city}`)
-    console.log(`state ${reduxState.state}`)
-    console.log(`zip ${reduxState.zip}`)
-    console.log(`img ${reduxState.img}`)
-    console.log(`mortgage ${this.state.mortgage}`)
-    console.log(`rent ${this.state.rent}`)
     axios.post('/api/house', {
-        name: reduxState.name,
-        address: reduxState.address,
-        city: reduxState.city,
-        state: reduxState.state,
-        zip: reduxState.zip,
-        img: reduxState.img,
-        mortgage: this.state.mortgage,
-        rent: this.state.rent
+        name: this.state.name,
+        address: this.state.address,
+        city: this.state.city,
+        state: this.state.state,
+        zip: this.state.zip
     })
-    this.clear()
 }
   mortgageChangeHandler(e) {
     this.setState({
@@ -47,19 +34,7 @@ export default class StepThree extends React.Component {
         rent: e.target.value,
     });
   }
-
-  nextStep() {
-    store.dispatch({
-      type: STEP_THREE,
-      payload: this.state
-    })
-  }
   
-  clear() {
-    store.dispatch({
-      type: CLEAR
-    })
-  }
 
   render() {
     return (
@@ -82,8 +57,6 @@ export default class StepThree extends React.Component {
             Previous Step
         </Link>
         <button onClick={() => {
-          const reduxState = store.getState()
-          console.log(reduxState)
             this.addHouse()
             this.props.history.push('/')
         }

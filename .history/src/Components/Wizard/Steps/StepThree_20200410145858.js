@@ -17,14 +17,6 @@ export default class StepThree extends React.Component {
   }
   addHouse() {
     const reduxState = store.getState()
-    console.log(`name ${reduxState.name}`)
-    console.log(`address ${reduxState.address}`)
-    console.log(`city ${reduxState.city}`)
-    console.log(`state ${reduxState.state}`)
-    console.log(`zip ${reduxState.zip}`)
-    console.log(`img ${reduxState.img}`)
-    console.log(`mortgage ${this.state.mortgage}`)
-    console.log(`rent ${this.state.rent}`)
     axios.post('/api/house', {
         name: reduxState.name,
         address: reduxState.address,
@@ -82,8 +74,6 @@ export default class StepThree extends React.Component {
             Previous Step
         </Link>
         <button onClick={() => {
-          const reduxState = store.getState()
-          console.log(reduxState)
             this.addHouse()
             this.props.history.push('/')
         }

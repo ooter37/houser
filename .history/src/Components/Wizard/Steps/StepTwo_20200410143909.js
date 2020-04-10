@@ -14,7 +14,7 @@ export default class StepTwo extends React.Component {
   componentDidMount() {
     store.subscribe(() => {
       const reduxState = store.getState()
-      this.setState({      
+      this.setState({
         img: reduxState.img
       })
     })
@@ -26,12 +26,11 @@ export default class StepTwo extends React.Component {
     });
   }
 
-  nextStep() {
-    store.dispatch({
-      type: STEP_TWO,
-      payload: this.state
+  nextStep() {}
+  store.dispatch({
+    type: STEP_TWO,
+    payload: this.state
   })
-  }
 
   render() {
     return (
@@ -44,18 +43,10 @@ export default class StepTwo extends React.Component {
           placeholder="Image"
         />
         <Link to="/wizard/step1">
-            <button onClick={() => {
-              this.nextStep()
-            }}>
-              Previous Step
-            </button>
+            Previous Step
         </Link>
         <Link to="/wizard/step3">
-          <button onClick={() => {
-            this.nextStep()
-            const reduxState = store.getState()
-            console.log(reduxState)
-          }}>Next Step</button>
+            Next Step
         </Link>
       </div>
     );

@@ -5,7 +5,6 @@ const initialState = {
   address: "",
   city: "",
   state: "",
-  zip: '',
   img: "",
   mortgage: "",
   rent: "",
@@ -14,39 +13,27 @@ const initialState = {
 export const STEP_ONE = 'STEP_ONE'
 export const STEP_TWO = 'STEP_TWO'
 export const STEP_THREE = 'STEP_THREE'
-export const CLEAR = 'CLEAR'
 
 
 function reducer(state = initialState, action) {
     switch (action.type) {
         case STEP_ONE:
             return {
-                name: action.payload.name, 
-                address: action.payload.address,
-                city: action.payload.city,
-                state: action.payload.state,
-                zip: action.payload.zip
+                name: action.payload, 
+                address: action.payload,
+                city: action.payload,
+                state: action.payload
             };
         case STEP_TWO:
             return {
                 ...state,
-                img: action.payload.img
+                img: action.payload
             };
         case STEP_THREE:
             return {
                 ...state,
-                mortgage: action.payload.mortgage,
-                rent: action.payload.rent
-            };
-        case CLEAR: 
-            return {
-                name: "",
-                address: "",
-                city: "",
-                state: "",
-                img: "",
-                mortgage: "",
-                rent: ""
+                mortgage: action.payload,
+                rent: action.payload
             }
         default:
             return state;

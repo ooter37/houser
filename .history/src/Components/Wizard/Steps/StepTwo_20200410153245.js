@@ -44,11 +44,7 @@ export default class StepTwo extends React.Component {
           placeholder="Image"
         />
         <Link to="/wizard/step1">
-            <button onClick={() => {
-              this.nextStep()
-            }}>
-              Previous Step
-            </button>
+            Previous Step
         </Link>
         <Link to="/wizard/step3">
           <button onClick={() => {

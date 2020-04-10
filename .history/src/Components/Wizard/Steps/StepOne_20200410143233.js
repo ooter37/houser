@@ -10,10 +10,8 @@ export default class StepOne extends React.Component {
       name: reduxState.name,
       address: reduxState.address,
       city: reduxState.city,
-      state: reduxState.state,
-      zip: reduxState.zip
+      state: reduxState.state
     };
-    this.nextStep = this.nextStep.bind(this)
   }
 
   componentDidMount() {
@@ -23,8 +21,7 @@ export default class StepOne extends React.Component {
             name: reduxState.name,
             address: reduxState.address,
             city: reduxState.city,
-            state: reduxState.state,
-            zip: reduxState.zip
+            state: reduxState.state
           })
       })
   }
@@ -107,8 +104,7 @@ export default class StepOne extends React.Component {
         <Link to="/wizard/step2">
             <button onClick={() => {
                 this.nextStep()
-                const reduxState = store.getState()
-                console.log(reduxState)
+                console.log(this.state)
             }}>Next Step</button>
         </Link>
       </div>

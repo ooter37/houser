@@ -10,8 +10,7 @@ export default class StepOne extends React.Component {
       name: reduxState.name,
       address: reduxState.address,
       city: reduxState.city,
-      state: reduxState.state,
-      zip: reduxState.zip
+      state: reduxState.state
     };
     this.nextStep = this.nextStep.bind(this)
   }
@@ -23,8 +22,7 @@ export default class StepOne extends React.Component {
             name: reduxState.name,
             address: reduxState.address,
             city: reduxState.city,
-            state: reduxState.state,
-            zip: reduxState.zip
+            state: reduxState.state
           })
       })
   }

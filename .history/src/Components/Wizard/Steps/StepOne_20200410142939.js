@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom'
-import store, {STEP_ONE} from '../../../store'
+import store from '../../../store'
 
 export default class StepOne extends React.Component {
   constructor() {
@@ -10,10 +10,8 @@ export default class StepOne extends React.Component {
       name: reduxState.name,
       address: reduxState.address,
       city: reduxState.city,
-      state: reduxState.state,
-      zip: reduxState.zip
+      state: reduxState.state
     };
-    this.nextStep = this.nextStep.bind(this)
   }
 
   componentDidMount() {
@@ -23,8 +21,7 @@ export default class StepOne extends React.Component {
             name: reduxState.name,
             address: reduxState.address,
             city: reduxState.city,
-            state: reduxState.state,
-            zip: reduxState.zip
+            state: reduxState.state
           })
       })
   }
@@ -105,11 +102,7 @@ export default class StepOne extends React.Component {
           placeholder="Zip Code"
         />
         <Link to="/wizard/step2">
-            <button onClick={() => {
-                this.nextStep()
-                const reduxState = store.getState()
-                console.log(reduxState)
-            }}>Next Step</button>
+            <button onClick={() => this.nextStep()}></button>
         </Link>
       </div>
     );

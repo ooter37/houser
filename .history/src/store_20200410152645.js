@@ -34,7 +34,6 @@ function reducer(state = initialState, action) {
             };
         case STEP_THREE:
             return {
-                ...state,
                 mortgage: action.payload.mortgage,
                 rent: action.payload.rent
             };

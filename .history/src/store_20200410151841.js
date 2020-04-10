@@ -29,12 +29,10 @@ function reducer(state = initialState, action) {
             };
         case STEP_TWO:
             return {
-                ...state,
                 img: action.payload.img
             };
         case STEP_THREE:
             return {
-                ...state,
                 mortgage: action.payload.mortgage,
                 rent: action.payload.rent
             };

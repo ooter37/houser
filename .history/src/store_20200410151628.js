@@ -30,13 +30,13 @@ function reducer(state = initialState, action) {
         case STEP_TWO:
             return {
                 ...state,
-                img: action.payload.img
+                img: action.payload
             };
         case STEP_THREE:
             return {
                 ...state,
-                mortgage: action.payload.mortgage,
-                rent: action.payload.rent
+                mortgage: action.payload,
+                rent: action.payload
             };
         case CLEAR: 
             return {

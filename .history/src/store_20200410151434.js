@@ -5,7 +5,6 @@ const initialState = {
   address: "",
   city: "",
   state: "",
-  zip: '',
   img: "",
   mortgage: "",
   rent: "",
@@ -24,19 +23,18 @@ function reducer(state = initialState, action) {
                 name: action.payload.name, 
                 address: action.payload.address,
                 city: action.payload.city,
-                state: action.payload.state,
-                zip: action.payload.zip
+                state: action.payload.state
             };
         case STEP_TWO:
             return {
                 ...state,
-                img: action.payload.img
+                img: action.payload
             };
         case STEP_THREE:
             return {
                 ...state,
-                mortgage: action.payload.mortgage,
-                rent: action.payload.rent
+                mortgage: action.payload,
+                rent: action.payload
             };
         case CLEAR: 
             return {
