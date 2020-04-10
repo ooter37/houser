@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Wizard from './Components/Wizard/Wizard'
-import Dashboard from './Components/Dashboard/Dashboard'
+import Dashboard from './Components/Dashboard/WiDashboardzard'
 import Header from './Components/Header/Header'
 
 function App() {

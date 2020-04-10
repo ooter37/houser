@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import Wizard from './Components/Wizard/Wizard'
-import Dashboard from './Components/Dashboard/Dashboard'
-import Header from './Components/Header/Header'
+import Dashboard from './Components/Dashboard/WiDashboardzard'
+import Header from './Components/Header/Wizard'
 
 function App() {
   return (
