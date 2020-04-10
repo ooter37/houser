@@ -22,10 +22,16 @@ export default class Dashboard extends React.Component {
         })
     }
     render() {
+        const mappedHouses = this.state.houses.map(elem => {
+            console.log(mappedHouses)
+            return (
+            <House/>
+            )
+        })
         return (
         <div>
             <Link to='/wizard'>Add New Property</Link>
-            <House houses={this.state.houses} />
+            <House mappedHouses={mappedHouses} />
         </div>
         )
     }

@@ -10,11 +10,6 @@ export default class Dashboard extends React.Component {
             houses: []
         }
     }
-
-    componentDidMount() {
-        this.getHouses()
-    }
-
     async getHouses() {
         const response = await axios.get('/api/houses')
         this.setState({
@@ -22,10 +17,15 @@ export default class Dashboard extends React.Component {
         })
     }
     render() {
+        this.state.houses.map(elem => {
+            return (
+            <House/>
+            )
+        })
         return (
         <div>
             <Link to='/wizard'>Add New Property</Link>
-            <House houses={this.state.houses} />
+            <House />
         </div>
         )
     }

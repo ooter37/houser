@@ -8,15 +8,9 @@ export default class House extends React.Component {
     render() {
         const mappedHouses = this.props.houses.map(elem => {
             return (
-                <div key={elem.id}>
+                <div>
                     <h1>{elem.name}</h1>
-                    <span>{elem.address}</span>
-                    <span>{elem.city}</span>
-                    <span>{elem.state}</span>
-                    <span>{elem.zip}</span>
-                    <img alt='house' src={elem.img}/>
-                    <span>{elem.mortgage}</span>
-                    <span>{elem.rent}</span>
+                
                 </div>
             )
         })

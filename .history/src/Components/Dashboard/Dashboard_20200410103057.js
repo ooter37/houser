@@ -1,7 +1,6 @@
 import React from 'react'
 import House from '../House/House'
 import {Link} from 'react-router-dom'
-import axios from 'axios'
 
 export default class Dashboard extends React.Component {
     constructor(){
@@ -10,22 +9,16 @@ export default class Dashboard extends React.Component {
             houses: []
         }
     }
-
-    componentDidMount() {
-        this.getHouses()
-    }
-
-    async getHouses() {
-        const response = await axios.get('/api/houses')
-        this.setState({
-            houses: response.data
-        })
-    }
     render() {
+        this.state.houses.map(elem => {
+            return (
+            <House/>
+            )
+        })
         return (
         <div>
             <Link to='/wizard'>Add New Property</Link>
-            <House houses={this.state.houses} />
+            <House />
         </div>
         )
     }
