@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Route, Switch } from "react-router-dom"
+import { Link, Route } from "react-router-dom"
 
 import StepOne from './Steps/StepOne'
 import StepTwo from './Steps/StepTwo'
@@ -18,13 +18,11 @@ export default class Wizard extends React.Component {
     return (
       <div>
         <Link to="/">Cancel</Link>
-<Switch>
-
+        <Switch>
           <Route path='/wizard/step1' component={StepOne}/>
           <Route path='/wizard/step2' component={StepTwo}/>
           <Route path='/wizard/step3' component={StepThree}/>
-</Switch>
-
+        </Switch>
       </div>
     );
   }
