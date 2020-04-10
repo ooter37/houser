@@ -1,6 +1,6 @@
 import React from 'react'
 import House from '../House/House'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import axios from 'axios'
 
 
@@ -11,16 +11,9 @@ export default class Dashboard extends React.Component {
             houses: [],
             redirect: false
         }
-        this.deleteHouse = this.deleteHouse.bind(this)
-        this.getHouses = this.getHouses.bind(this)
     }
 
     componentDidMount() {
-        this.getHouses()
-    }
-
-    async deleteHouse(id) {
-        await axios.delete(`/api/delete/${id}`)
         this.getHouses()
     }
 
@@ -29,16 +22,21 @@ export default class Dashboard extends React.Component {
         this.setState({
             houses: response.data
         })
-        }
+        (() => {
+            this.setState({redirect: true})
+            console.log(this.state.redirect)
+        })
         
-    
+    }
     render() {
+        const {redirect} = this.state
+        if (redirect) {
+            return <Redirect to='/'/>
+        }
         return (
         <div>
             <Link to='/wizard'>Add New Property</Link>
-            <House 
-            houses={this.state.houses}
-            delete={this.deleteHouse} />
+            <House houses={this.state.houses} />
         </div>
         )
     }

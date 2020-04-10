@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link, Router, Route } from "react-router-dom"
+import {browserHistory, hashHistory} from 'react-router'
 import axios from 'axios'
 
 export default class Wizard extends React.Component {
@@ -22,7 +23,8 @@ export default class Wizard extends React.Component {
           city: this.state.city,
           state: this.state.state,
           zip: this.state.zip
-      })
+      }).then(
+          console.log('good'))
   }
 
   nameChangeHandler(e) {
@@ -52,6 +54,10 @@ export default class Wizard extends React.Component {
   }
 
   render() {
+    // const {redirect} = this.state
+    // if (redirect) {
+    //     return <Redirect to='/'/>
+    // }
     return (
       <div>
         <Link to="/">Cancel</Link>
@@ -89,14 +95,14 @@ export default class Wizard extends React.Component {
 
         <input
           name="zip"
-          type='text'
+          type='integer'
           value={this.state.zip}
           onChange={(e) => this.zipChangeHandler(e)}
           placeholder="Zip Code"
         />
         <button onClick={() => {
             this.addHouse()
-            this.props.history.push('/')
+            this.context.router.history.push('/')
         }
     }
         >Complete</button>

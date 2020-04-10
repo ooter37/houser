@@ -19,9 +19,10 @@ export default class Dashboard extends React.Component {
         this.getHouses()
     }
 
-    async deleteHouse(id) {
-        await axios.delete(`/api/delete/${id}`)
+    deleteHouse(id) {
+        axios.delete(`/api/delete/${id}`).then(
         this.getHouses()
+        )
     }
 
     async getHouses() {

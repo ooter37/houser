@@ -17,7 +17,7 @@ export default class House extends React.Component {
                     {/* <img alt='house' src={elem.img}/>
                     <span>{elem.mortgage}</span>
                     <span>{elem.rent}</span> */}
-                    <button onClick={() => {this.props.delete(elem.id)}}>Delete</button>
+                    <button onClick={this.props.delete(elem.id)}>Delete</button>
                 </div>
             )
         })

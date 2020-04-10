@@ -89,7 +89,7 @@ export default class Wizard extends React.Component {
 
         <input
           name="zip"
-          type='text'
+          type='integer'
           value={this.state.zip}
           onChange={(e) => this.zipChangeHandler(e)}
           placeholder="Zip Code"
@@ -97,6 +97,7 @@ export default class Wizard extends React.Component {
         <button onClick={() => {
             this.addHouse()
             this.props.history.push('/')
+            this.props.refresh()
         }
     }
         >Complete</button>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import axios from 'axios'
 
 export default class Wizard extends React.Component {
@@ -10,7 +10,7 @@ export default class Wizard extends React.Component {
       address: "",
       city: "",
       state: "",
-      redirect: false
+      zip: "",
     };
     this.addHouse = this.addHouse.bind(this)
   }
@@ -22,7 +22,9 @@ export default class Wizard extends React.Component {
           city: this.state.city,
           state: this.state.state,
           zip: this.state.zip
-      })
+      }).then(
+          console.log('top'),
+          console.log('good'))
   }
 
   nameChangeHandler(e) {
@@ -89,17 +91,12 @@ export default class Wizard extends React.Component {
 
         <input
           name="zip"
-          type='text'
+          type='integer'
           value={this.state.zip}
           onChange={(e) => this.zipChangeHandler(e)}
           placeholder="Zip Code"
         />
-        <button onClick={() => {
-            this.addHouse()
-            this.props.history.push('/')
-        }
-    }
-        >Complete</button>
+        <button onClick={this.addHouse}>Complete</button>
       </div>
     );
   }

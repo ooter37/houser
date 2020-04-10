@@ -18,7 +18,7 @@ massive({
 
 app.get('/api/houses', getHouses)
 app.post('/api/house', addHouse)
-app.delete('/api/delete/:id', deleteHouse)
+app.delete('/api/house:id', deleteHouse)
 
 
 

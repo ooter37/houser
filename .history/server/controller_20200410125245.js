@@ -18,11 +18,7 @@ module.exports = {
       req.body.city,
       req.body.state,
       req.body.zip
-    ).then(() => res.sendStatus(200))
-    .catch(err => {
-        res.status(500).send('Problem with add house')
-        console.log(err)
-    })
+    ).then(() => res.sendStatus(200));
   },
   deleteHouse: (req,res,next) => {
       const db = req.app.get('db')
@@ -30,7 +26,6 @@ module.exports = {
       .then(res.sendStatus(200))
       .catch(err => {
           res.status(500).send('Problem with delete house')
-          console.log(err)
       })
   }
 };

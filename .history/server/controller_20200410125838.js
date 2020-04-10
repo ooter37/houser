@@ -28,9 +28,6 @@ module.exports = {
       const db = req.app.get('db')
       db.delete_house(req.params.id)
       .then(res.sendStatus(200))
-      .catch(err => {
-          res.status(500).send('Problem with delete house')
-          console.log(err)
-      })
+      
   }
 };

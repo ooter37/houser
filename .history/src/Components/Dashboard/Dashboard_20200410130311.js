@@ -36,9 +36,7 @@ export default class Dashboard extends React.Component {
         return (
         <div>
             <Link to='/wizard'>Add New Property</Link>
-            <House 
-            houses={this.state.houses}
-            delete={this.deleteHouse} />
+            <House houses={this.state.houses} />
         </div>
         )
     }

@@ -52,6 +52,10 @@ export default class Wizard extends React.Component {
   }
 
   render() {
+    // const {redirect} = this.state
+    // if (redirect) {
+    //     return <Redirect to='/'/>
+    // }
     return (
       <div>
         <Link to="/">Cancel</Link>
@@ -89,7 +93,7 @@ export default class Wizard extends React.Component {
 
         <input
           name="zip"
-          type='text'
+          type='integer'
           value={this.state.zip}
           onChange={(e) => this.zipChangeHandler(e)}
           placeholder="Zip Code"
