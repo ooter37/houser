@@ -8,8 +8,7 @@ export default class Dashboard extends React.Component {
     constructor(){
         super()
         this.state = {
-            houses: [],
-            redirect: false
+            houses: []
         }
     }
 
@@ -22,12 +21,9 @@ export default class Dashboard extends React.Component {
         this.setState({
             houses: response.data
         })
-        
+        <Redirect  to='/'/>
     }
     render() {
-        if (this.state.redirect === true) {
-            return <Redirect to='/'/>
-        }
         return (
         <div>
             <Link to='/wizard'>Add New Property</Link>

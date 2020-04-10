@@ -17,7 +17,10 @@ module.exports = {
       req.body.address,
       req.body.city,
       req.body.state,
-      req.body.zip
+      req.body.zip,
+      req.body.img,
+      req.body.mortgage,
+      req.body.rent
     ).then(() => res.sendStatus(200));
   },
 };

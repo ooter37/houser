@@ -14,9 +14,9 @@ export default class House extends React.Component {
                     <span>{elem.city}</span>
                     <span>{elem.state}</span>
                     <span>{elem.zip}</span>
-                    {/* <img alt='house' src={elem.img}/>
+                    <img alt='house' src={elem.img}/>
                     <span>{elem.mortgage}</span>
-                    <span>{elem.rent}</span> */}
+                    <span>{elem.rent}</span>
                     <button>Delete</button>
                 </div>
             )

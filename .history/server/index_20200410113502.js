@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 
 const {CONNECTION_STRING, SERVER_PORT} = process.env
-const {getHouses, addHouse} = require('./controller')
+const {getHouses} = require('./controller')
 
 massive({
     connectionString: CONNECTION_STRING,
@@ -17,7 +17,7 @@ massive({
 }).catch(err => console.log(err))
 
 app.get('/api/houses', getHouses)
-app.post('/api/house', addHouse)
+app.post('/api/house', )
 // app.delete('/api/house:id')
 
 

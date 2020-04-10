@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios'
 
 export default class Wizard extends React.Component {
   constructor() {
@@ -12,17 +11,16 @@ export default class Wizard extends React.Component {
       state: "",
       zip: "",
     };
-    this.addHouse = this.addHouse.bind(this)
   }
-   
-  addHouse() {
-      axios.post('/api/house', {
+
+  async addHouse() {
+      const response = await axios.post('/api/house', {
           name: this.state.name,
           address: this.state.address,
           city: this.state.city,
           state: this.state.state,
           zip: this.state.zip
-      }).then(console.log('good'))
+      })
   }
 
   nameChangeHandler(e) {
@@ -57,7 +55,6 @@ export default class Wizard extends React.Component {
         <Link to="/">Cancel</Link>
         <input
           name="house-name"
-          type='text'
           value={this.state.name}
           onChange={(e) => this.nameChangeHandler(e)}
           placeholder="Name"
@@ -65,36 +62,32 @@ export default class Wizard extends React.Component {
 
         <input
           name="address"
-          type='text'
-          value={this.state.address}
+          value={this.state.name}
           onChange={(e) => this.addressChangeHandler(e)}
           placeholder="Address"
         />
 
         <input
           name="city"
-          type='text'
-          value={this.state.city}
+          value={this.state.name}
           onChange={(e) => this.cityChangeHandler(e)}
           placeholder="City"
         />
 
         <input
           name="state"
-          type='text'
-          value={this.state.state}
+          value={this.state.name}
           onChange={(e) => this.stateChangeHandler(e)}
           placeholder="State"
         />
 
         <input
           name="zip"
-          type='integer'
-          value={this.state.zip}
+          value={this.state.name}
           onChange={(e) => this.zipChangeHandler(e)}
           placeholder="Zip Code"
         />
-        <button onClick={this.addHouse}>Complete</button>
+
       </div>
     );
   }

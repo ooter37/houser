@@ -65,7 +65,6 @@ export default class Wizard extends React.Component {
 
         <input
           name="address"
-          type='text'
           value={this.state.address}
           onChange={(e) => this.addressChangeHandler(e)}
           placeholder="Address"
@@ -73,7 +72,6 @@ export default class Wizard extends React.Component {
 
         <input
           name="city"
-          type='text'
           value={this.state.city}
           onChange={(e) => this.cityChangeHandler(e)}
           placeholder="City"
@@ -81,7 +79,6 @@ export default class Wizard extends React.Component {
 
         <input
           name="state"
-          type='text'
           value={this.state.state}
           onChange={(e) => this.stateChangeHandler(e)}
           placeholder="State"
@@ -89,7 +86,6 @@ export default class Wizard extends React.Component {
 
         <input
           name="zip"
-          type='integer'
           value={this.state.zip}
           onChange={(e) => this.zipChangeHandler(e)}
           placeholder="Zip Code"
