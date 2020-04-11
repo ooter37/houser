@@ -14,6 +14,7 @@ export default class StepOne extends React.Component {
       zip: reduxState.zip,
     };
     this.nextStep = this.nextStep.bind(this);
+    this.clear = this.clear.bind(this)
   }
 
   componentDidMount() {
@@ -65,7 +66,7 @@ export default class StepOne extends React.Component {
   render() {
     return (
       <div>
-          {/* <button onClick={() => {this.props.clear()}}>Cancel</button> */}
+          <button onClick={() => {this.props.clear()}}>Cancel</button>
         <input
           name="house-name"
           type="text"

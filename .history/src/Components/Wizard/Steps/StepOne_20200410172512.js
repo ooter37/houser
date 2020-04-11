@@ -63,9 +63,10 @@ export default class StepOne extends React.Component {
   }
 
   render() {
+      console.log(this.props)
     return (
       <div>
-          {/* <button onClick={() => {this.props.clear()}}>Cancel</button> */}
+          <button onClick={() => {this.props.clear()}}>Cancel</button>
         <input
           name="house-name"
           type="text"

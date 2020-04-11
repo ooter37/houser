@@ -3,7 +3,7 @@ import './reset.css'
 import React from 'react';
 import { HashRouter } from 'react-router-dom'
 import routes from './routes'
-import Wizard from './Components/Wizard/Wizard'
+import wizard from './Components/Wizard/Wizard'
 
 import Header from './Components/Header/Header'
 
@@ -15,7 +15,7 @@ function App() {
       main
       <Header />
       {routes}
-    <Wizard />
+    {wizard}
     </div>
     </HashRouter>
   );

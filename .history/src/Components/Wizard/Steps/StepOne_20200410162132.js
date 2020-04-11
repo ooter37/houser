@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import store, { STEP_ONE } from "../../../store";
 
 export default class StepOne extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     const reduxState = store.getState();
     this.state = {
       name: reduxState.name,
@@ -65,7 +65,6 @@ export default class StepOne extends React.Component {
   render() {
     return (
       <div>
-          {/* <button onClick={() => {this.props.clear()}}>Cancel</button> */}
         <input
           name="house-name"
           type="text"

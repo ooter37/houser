@@ -8,10 +8,7 @@ import StepThree from './Steps/StepThree'
 
 
 export default class Wizard extends React.Component {
-constructor() {
-  super()
-  this.clear = this.clear.bind(this)
-}
+
   clear() {
     store.dispatch({
       type: CLEAR
@@ -24,9 +21,10 @@ constructor() {
         <Link to="/">
           <button onClick={() => this.clear()}>Clear</button>
         </Link>
+        <StepOne clearButton={this.clear}/>
 <Switch>
 
-          <Route path='/wizard/step1' render={(props) => <StepOne {...props} clear={this.clear}/>}/>
+          <Route path='/wizard/step1' component={StepOne}/>
           <Route path='/wizard/step2' component={StepTwo}/>
           <Route path='/wizard/step3' component={StepThree}/>
 </Switch>
